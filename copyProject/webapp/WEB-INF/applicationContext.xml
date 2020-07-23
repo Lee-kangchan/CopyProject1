@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+http://www.springframework.org/schema/beans/spring-beans.xsd    http://www.springframework.org/schema/aop
+
+http://www.springframework.org/schema/aop/spring-aop.xsd    http://www.springframework.org/schema/context
+
+http://www.springframework.org/schema/context/spring-context.xsd    http://www.springframework.org/schema/jee
+
+http://www.springframework.org/schema/jee/spring-jee.xsd    http://www.springframework.org/schema/lang
+
+http://www.springframework.org/schema/lang/spring-lang.xs    http://www.springframework.org/schema/tx
+
+http://www.springframework.org/schema/tx/spring-tx.xsd    http://www.springframework.org/schema/util
+
+http://www.springframework.org/schema/util/spring-util.xsd    http://www.springframework.org/schema/task
+
+http://www.springframework.org/schema/task/spring-task.xsd">
+
+
+
+
+
+	<context:annotation-config />
+
+		
+<tx:annotation-driven/>
+
+	<context:component-scan
+		base-package="com.victolee.sampleproject.*">
+
+		<context:include-filter type="annotation"
+
+			expression="org.springframework.stereotype.Repository" />
+		<context:include-filter type="annotation"
+
+			expression="org.springframework.stereotype.Controller" />
+
+		<context:include-filter type="annotation"
+
+			expression="org.springframework.stereotype.Service" />
+
+		<context:include-filter type="annotation"
+
+			expression="org.springframework.stereotype.Component" />
+
+	</context:component-scan>
+		
+	<!--   <bean id="redisManager" class="com.victolee.sampleproject.search.RedisManager" >
+	 	<constructor-arg index="0" value="127.0.0.1" />
+		<constructor-arg index="1" value="6380" />
+		<constructor-arg index="2" value="1234" />
+		<constructor-arg index="3" value=""/>
+	</bean>
+	
+	 <bean id="transportClient" class="com.victolee.sampleproject.search.CustomSearchClient" init-method="init" destroy-method="close">
+	 	<constructor-arg index="0" value="127.0.0.1" />
+		<constructor-arg index="1" value="9200" />
+	</bean> -->
+	
+
+</beans>
